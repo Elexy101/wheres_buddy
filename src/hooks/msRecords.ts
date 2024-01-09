@@ -14,10 +14,10 @@ export const useMsRecords = (address?: string) => {
     multisig: true,
   });
   const msGameRecords = records?.filter(
-    (record) => record.programId === 'wheres_alex_v018.aleo'
+    (record) => record.programId === 'wheres_alex_buddy.aleo'
   );
   const msPuzzleRecords = records?.filter(
-    (record) => record.programId === 'puzzle_pieces_v015.aleo'
+    (record) => record.programId === 'puzzle_pieces_buddy.aleo'
   );
   const msUtilRecords = records?.filter(
     (record) => record.programId === 'multiparty_pvp_utils_v015.aleo'
