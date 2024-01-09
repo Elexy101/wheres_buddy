@@ -1,4 +1,4 @@
-program puzzle_pieces_v016.aleo;
+program puzzle_pieces_buddy.aleo;
 
 struct Message:
     field_1 as field;
@@ -175,7 +175,7 @@ function mint_private:
     input r0 as u64.private;
     input r1 as address.private;
     cast r1 r0 0u32 into r2 as Piece.record;
-    cast aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls r1 r0 1u32 into r3 as AuditMint.record;
+    cast aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m r1 r0 1u32 into r3 as AuditMint.record;
     output r2 as Piece.record;
     output r3 as AuditMint.record;
 
@@ -195,7 +195,7 @@ function join_pieces:
     add r0.amount r1.amount into r6;
     cast self.signer r6 0u32 into r7 as Piece.record;
     add r0.amount r1.amount into r8;
-    cast aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls self.signer r8 32u32 into r9 as AuditJoin.record;
+    cast aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m self.signer r8 32u32 into r9 as AuditJoin.record;
     output r7 as Piece.record;
     output r9 as AuditJoin.record;
 
@@ -207,7 +207,7 @@ function transfer_private:
     sub r0.amount r2 into r3;
     cast r0.owner r3 0u32 into r4 as Piece.record;
     cast r1 r2 0u32 into r5 as Piece.record;
-    cast aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls r0.owner r1 r2 2u32 into r6 as AuditTransfer.record;
+    cast aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m r0.owner r1 r2 2u32 into r6 as AuditTransfer.record;
     output r4 as Piece.record;
     output r5 as Piece.record;
     output r6 as AuditTransfer.record;
@@ -243,7 +243,7 @@ function stake_transfer_in:
     cast r4 r5 r2 r3 r1 3u32 into r22 as PieceStake.record;
     sub r0.amount r5 into r23;
     cast r1 r23 0u32 into r24 as Piece.record;
-    cast aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls r0.owner r5 r2 r3 r4 4u32 into r25 as AuditStakeIn.record;
+    cast aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m r0.owner r5 r2 r3 r4 4u32 into r25 as AuditStakeIn.record;
     output r20 as PieceClaim.record;
     output r22 as PieceStake.record;
     output r21 as ClaimSignature.record;
@@ -263,7 +263,7 @@ function stake_transfer_out:
     sign.verify r2 r1.claimer r3 into r4;
     assert.eq true r4;
     cast r1.claimer r1.amount 0u32 into r5 as Piece.record;
-    cast aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls r1.claimer r1.amount r1.challenger r1.opponent r1.owner 5u32 into r6 as AuditStakeOut.record;
+    cast aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m r1.claimer r1.amount r1.challenger r1.opponent r1.owner 5u32 into r6 as AuditStakeOut.record;
     output r5 as Piece.record;
     output r6 as AuditStakeOut.record;
 
@@ -355,8 +355,8 @@ function joint_stake_transfer_to_winner:
     or r8 r9 into r10;
     assert.eq r10 true;
     cast r0.winner r0.amount 0u32 into r11 as Piece.record;
-    cast aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls r0.challenger r0.opponent r0.owner r0.winner r0.amount 14u32 into r12 as AuditTransferToWinner.record;
-    cast aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls r0.winner r0.amount 15u32 into r13 as AuditPieceOwner.record;
+    cast aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m r0.challenger r0.opponent r0.owner r0.winner r0.amount 14u32 into r12 as AuditTransferToWinner.record;
+    cast aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m r0.winner r0.amount 15u32 into r13 as AuditPieceOwner.record;
     output r11 as Piece.record;
     output r12 as AuditTransferToWinner.record;
     output r13 as AuditPieceOwner.record;
@@ -374,6 +374,6 @@ function joint_timeout_to_opponent:
     sign.verify r2 r1.time_claimer_address r3 into r4;
     assert.eq true r4;
     cast r1.opponent r1.amount 0u32 into r5 as Piece.record;
-    cast aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls r1.challenger r1.opponent r1.owner r1.opponent r1.amount 14u32 into r6 as AuditTransferToWinner.record;
+    cast aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m r1.challenger r1.opponent r1.owner r1.opponent r1.amount 14u32 into r6 as AuditTransferToWinner.record;
     output r5 as Piece.record;
     output r6 as AuditTransferToWinner.record;
