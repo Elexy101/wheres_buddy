@@ -1,7 +1,7 @@
 // The 'puzzle_pieces_v016' program.
 // Without nested imports -- puzzle pieces is going to need Piece Keepers to enforce
 
-program puzzle_pieces_v016.aleo {
+program puzzle_pieces_buddy.aleo {
     mapping supply: field => u64;
 
     struct Message {
@@ -222,7 +222,7 @@ program puzzle_pieces_v016.aleo {
 
     transition mint_private (amount: u64, to: address) -> (Piece, AuditMint) {
         // set puzzle issuing address as issuer:
-        let puzzle_issuer: address = aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls;
+        let puzzle_issuer: address = aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m;
 
         // no checks on minting right now. test actions and audit without address check
 
@@ -267,7 +267,7 @@ program puzzle_pieces_v016.aleo {
         assert(piece_record_two.amount > 0u64);
 
         // set puzzle issuing address as issuer:
-        let puzzle_issuer: address = aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls;
+        let puzzle_issuer: address = aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m;
 
         let joined_piece_record: Piece = Piece {
             owner: self.signer,
@@ -288,7 +288,7 @@ program puzzle_pieces_v016.aleo {
 
     transition transfer_private (sender: Piece, receiver: address, amount: u64) -> (Piece, Piece, AuditTransfer) {
         // set puzzle issuing address as issuer:
-        let puzzle_issuer: address = aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls;
+        let puzzle_issuer: address = aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m;
 
         let difference: u64 = sender.amount - amount;
 
@@ -344,7 +344,7 @@ program puzzle_pieces_v016.aleo {
     ) -> (PieceClaim, PieceStake, ClaimSignature, Piece, AuditStakeIn)
     {
         // set puzzle issuing address as issuer:
-        let puzzle_issuer: address = aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls;
+        let puzzle_issuer: address = aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m;
 
         // ownership checks on sender == self.caller cant be done until Leo is updated
         // can't use self.caller or self.signer until leo fixed
@@ -427,7 +427,7 @@ program puzzle_pieces_v016.aleo {
         sig: signature
     ) -> (Piece, AuditStakeOut) {
         // set puzzle issuing address as issuer:
-        let puzzle_issuer: address = aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls;
+        let puzzle_issuer: address = aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m;
 
         // 1. Check Claim & Stake are from same game_multisig
         assert_eq(piece_stake.owner, piece_claim.owner);
@@ -482,7 +482,7 @@ program puzzle_pieces_v016.aleo {
         block_ht: u32 //good actor uses our api endpoint on FE to get blockheight and use as inputs
     ) -> (PieceJointStake, JointPieceTimeClaim, JointPieceState, AuditJointStake) {
         // set puzzle issuing address as issuer:
-        let puzzle_issuer: address = aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls;
+        let puzzle_issuer: address = aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m;
 
         // 0. Add a self.signer check against
         let owner: address = piece_stake_challenger.owner;
@@ -587,7 +587,7 @@ program puzzle_pieces_v016.aleo {
         winner: address
     ) -> (JointPieceWinner, AuditJointPieceWinner) {
         // set puzzle issuing address as issuer:
-        let puzzle_issuer: address = aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls;
+        let puzzle_issuer: address = aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m;
 
         // 0. Check that owner matches
         assert_eq(joint_piece_state.owner, sig.owner);
@@ -667,7 +667,7 @@ program puzzle_pieces_v016.aleo {
         joint_piece_time_claim: JointPieceTimeClaim,
     ) -> (Piece,AuditTransferToWinner, AuditPieceOwner) {
         // set puzzle issuing address as issuer:
-        let puzzle_issuer: address = aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls;
+        let puzzle_issuer: address = aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m;
 
         // 0. Add a self.signer check against
         let game_multisig: address = joint_piece_winner.owner;
@@ -743,7 +743,7 @@ program puzzle_pieces_v016.aleo {
     ) -> (Piece, AuditTransferToWinner)
     {
         // set puzzle issuing address as issuer:
-        let puzzle_issuer: address = aleo16hf8hfpwasnn9cf7k2c0dllc56nn7qt547qxgvgwu6pznw4trvqsx68kls;
+        let puzzle_issuer: address = aleo1az8p9vlllyqwtj0c2g9svkd0e5v0p3zzdflwwrpa7kpe8xrfxgfqqpru7m;
 
         // 1. Check that all are from the same multisig
         let game_multisig: address = joint_piece_time_claim.owner;
