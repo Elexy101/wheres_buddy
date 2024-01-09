@@ -1,7 +1,7 @@
-# Where's Alex private multiparty game on Aleo 
-Hide Alex and challenge a friend to find Alex -- winner gets the pot!
+# Where's Buddy private multiparty game on Aleo 
+Hide Buddy and challenge a friend to find Buddy -- winner gets the pot!
 
-Alex's location is hidden onchain from the other party, and the entire game is hidden from everyone on chain so you can bet as much as you want without judgement :)
+Buddy's location is hidden onchain from the other party, and the entire game is hidden from everyone on chain so you can bet as much as you want without judgement :)
 
 Built with Puzzle Wallet & Puzzle SDK -- uses programmable private multisigs under the hood!
 
@@ -17,13 +17,13 @@ Built with Puzzle Wallet & Puzzle SDK -- uses programmable private multisigs und
 [<img src="https://github.com/puzzlehq/serengeti/assets/39972641/9650a6b8-5680-4a53-b6c6-608b8809d38e">](https://wheresalex.puzzle.online/)
 
 
-# About Where's Alex?
-Where's Alex? is a fun experiment that aims to be a fun 1v1 game to showcase how to have a completely private multiparty game on Aleo! This technical overview reviews the issues with multiparty privacy and how this is solved using programmable private multisigs and incentives!
+# About Where's Buddy?
+Where's Buddy? is a fun experiment that aims to be a fun 1v1 game to showcase how to have a completely private multiparty game on Aleo! This technical overview reviews the issues with multiparty privacy and how this is solved using programmable private multisigs and incentives!
 
 <br /> 
 
-## What is the "Where's Alex?" game?
-Hide alex in a secret location and wager another person on Aleo to guess where you hid Alex. If they guess wrong, then you win the prize pot between you both! 
+## What is the "Where's Buddy?" game?
+Hide Buddy in a secret location and wager another person on Aleo to guess where you hid Buddy. If they guess wrong, then you win the prize pot between you both! 
 
  <br />
 
@@ -41,17 +41,17 @@ The FE for the game utilizes key multisig features using the Puzzle Wallet and P
 The game is split into 3 Leo Programs described below:
 1. Puzzle Pieces token program (with _n_ of _n_ programmable multisig functions)
 2. Multiparty PVP utils program
-3. Where's Alex program
+3. Where's Buddy program
 
 <br /> 
 
 If you're interested in building your own multiparty game on Aleo, fork this repo and give it a shot! 
 
-# How to play Where's Alex
+# How to play Where's Buddy
 1. Starting a new game (challenger)
 - mint Puzzle Pieces if you don't have already
 - challenge another Aleo address
-- hide alex in either the weeds or the bushes
+- hide Buddy in either the weeds or the bushes
 - set your wager amount to win if your opponent guesses wrong!
 
 <br /> 
@@ -59,7 +59,7 @@ If you're interested in building your own multiparty game on Aleo, fork this rep
 2. Accepting a new game (opponent)
 - mint puzzle pieces if you don't have already
 - match wager from the challenger
-- guess if alex is hiding in the weeds or the bushes
+- guess if Buddy is hiding in the weeds or the bushes
 - accept the game and lock in the wagers to win if you guess correct!
 
 <br /> 
@@ -69,7 +69,7 @@ If you're interested in building your own multiparty game on Aleo, fork this rep
 - Finish the geam and payout the wagers to you if the opponent guessed wrong or the opponent if they guessed right!
 
 
-# How Where's Alex showcases how to solve issues in multiparty privacy
+# How Where's Buddy showcases how to solve issues in multiparty privacy
 
 ## Defining Multiparty Privacy
 Multiparty privacy is a broad category and can be split into multiple categories based on use cases like:
